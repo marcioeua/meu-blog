@@ -1,0 +1,16 @@
+---
+// Layout para páginas institucionais (Sobre, Contato, Privacidade, Termos)
+import BaseLayout from './BaseLayout.astro';
+interface Props { title: string; description?: string }
+const { title, description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article class="page prose">
+    <h1>{title}</h1>
+    <slot />
+  </article>
+</BaseLayout>
+
+<style>
+  .page { max-width: 720px; margin: 0 auto; padding-top: 2rem; }
+</style>

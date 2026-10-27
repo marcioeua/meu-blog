@@ -1,0 +1,14 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../config';
+---
+<PageLayout title="Sobre" description={`Conheça o ${SITE.title}.`}>
+  <p>
+    O <strong>{SITE.title}</strong> nasceu com o objetivo de [descreva a missão do blog].
+    Aqui você encontra conteúdos sobre [seu nicho], escritos de forma clara e prática.
+  </p>
+  <h2>Quem escreve</h2>
+  <p>Meu nome é {SITE.author}. [Conte um pouco da sua experiência e por que você é uma boa fonte sobre o assunto.]</p>
+  <h2>Nosso compromisso</h2>
+  <p>Todo conteúdo é revisado e atualizado periodicamente para garantir informações corretas e úteis.</p>
+</PageLayout>

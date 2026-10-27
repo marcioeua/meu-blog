@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../config';
+---
+<PageLayout title="Política de Privacidade" description={`Política de privacidade do ${SITE.title}.`}>
+  <p><em>Última atualização: [data]</em></p>
+  <p>
+    A sua privacidade é importante para nós. Esta política explica quais informações coletamos ao
+    visitar o <strong>{SITE.title}</strong> e como elas são usadas, em conformidade com a Lei Geral de
+    Proteção de Dados (LGPD – Lei nº 13.709/2018).
+  </p>
+
+  <h2>Informações coletadas</h2>
+  <p>
+    Coletamos automaticamente dados de navegação, como endereço IP, tipo de navegador, páginas
+    visitadas e tempo de permanência, por meio de cookies e tecnologias semelhantes.
+  </p>
+
+  <h2>Cookies e publicidade (Google AdSense)</h2>
+  <ul>
+    <li>Fornecedores terceiros, incluindo o Google, usam cookies para exibir anúncios com base em visitas anteriores do usuário a este e a outros sites.</li>
+    <li>O uso de cookies de publicidade pelo Google permite que ele e seus parceiros exibam anúncios aos usuários com base nas visitas feitas a este site e/ou a outros sites na Internet.</li>
+    <li>Você pode desativar a publicidade personalizada acessando as <a href="https://adssettings.google.com" rel="noopener" target="_blank">Configurações de anúncios do Google</a>, ou desativar cookies de fornecedores terceiros em <a href="https://www.aboutads.info" rel="noopener" target="_blank">www.aboutads.info</a>.</li>
+    <li>Saiba mais em <a href="https://policies.google.com/technologies/ads" rel="noopener" target="_blank">Como o Google usa cookies em publicidade</a>.</li>
+  </ul>
+
+  <h2>Análise de tráfego</h2>
+  <p>Podemos utilizar ferramentas como o Google Analytics para entender como os visitantes usam o site.</p>
+
+  <h2>Seus direitos</h2>
+  <p>
+    Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento pelo
+    e-mail <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Também é possível bloquear ou excluir
+    cookies nas configurações do seu navegador.
+  </p>
+
+  <h2>Alterações</h2>
+  <p>Esta política pode ser atualizada periodicamente. Recomendamos revisá-la de tempos em tempos.</p>
+</PageLayout>

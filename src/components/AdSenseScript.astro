@@ -1,0 +1,13 @@
+---
+// Script principal do AdSense — carregado uma única vez no <head>.
+import { ADSENSE } from '../config';
+---
+{ADSENSE.client && (
+  <script
+    is:inline
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE.client}`}
+    crossorigin="anonymous"
+  ></script>
+)}
+{ADSENSE.client && <meta name="google-adsense-account" content={ADSENSE.client} />}

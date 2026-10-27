@@ -1,0 +1,24 @@
+---
+import { SITE } from '../config';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; {year} {SITE.title}. Todos os direitos reservados.</p>
+    <nav>
+      <a href="/sobre/">Sobre</a>
+      <a href="/contato/">Contato</a>
+      <a href="/politica-de-privacidade/">Política de Privacidade</a>
+      <a href="/termos-de-uso/">Termos de Uso</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--border); margin-top: 4rem; padding-block: 2rem; color: var(--muted); font-size: .9rem; }
+  .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .footer-inner p { margin: 0; }
+  nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+  nav a { color: var(--muted); }
+</style>

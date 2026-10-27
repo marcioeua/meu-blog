@@ -1,0 +1,38 @@
+---
+// Bloco de anúncio reutilizável. Uso: <AdUnit position="inArticle" />
+import { ADSENSE } from '../config';
+
+interface Props {
+  position: keyof typeof ADSENSE.slots;
+  format?: 'auto' | 'fluid' | 'rectangle' | 'horizontal' | 'vertical';
+  layout?: string;
+}
+
+const { position, format = 'auto', layout } = Astro.props;
+const slotId = ADSENSE.slots[position];
+const enabled = Boolean(ADSENSE.client && slotId);
+const isDev = import.meta.env.DEV;
+---
+{enabled ? (
+  <div class="ad-container">
+    <span class="ad-label">Publicidade</span>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE.client}
+      data-ad-slot={slotId}
+      data-ad-format={format}
+      data-ad-layout={layout}
+      data-full-width-responsive="true"
+    ></ins>
+    <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+) : isDev && (
+  <div class="ad-container ad-placeholder">Espaço de anúncio: {position}</div>
+)}
+
+<style>
+  .ad-container { margin: 2rem 0; text-align: center; min-height: 100px; }
+  .ad-label { display: block; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .25rem; }
+  .ad-placeholder { border: 2px dashed var(--border); color: var(--muted); display: grid; place-items: center; border-radius: 8px; font-size: .9rem; }
+</style>

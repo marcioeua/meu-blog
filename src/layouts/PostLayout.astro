@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import AdUnit from '../components/AdUnit.astro';
+import { SITE } from '../config';
+
+interface Props { post: CollectionEntry<'blog'> }
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  author: { '@type': 'Person', name: SITE.author },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+  ...(heroImage && { image: new URL(heroImage, Astro.site).href }),
+};
+---
+<BaseLayout title={title} description={description} image={heroImage} type="article">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <article class="post">
+    <header class="post-header">
+      <span class="category">{category}</span>
+      <h1>{title}</h1>
+      <p class="meta">
+        Por {SITE.author} · <FormattedDate date={pubDate} />
+        {updatedDate && <> · Atualizado em <FormattedDate date={updatedDate} /></>}
+      </p>
+    </header>
+
+    {heroImage && <img class="hero" src={heroImage} alt="" width="1200" height="630" />}
+
+    <AdUnit position="header" />
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <AdUnit position="footer" />
+
+    {tags.length > 0 && (
+      <ul class="tags">{tags.map((tag) => <li>#{tag}</li>)}</ul>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding-top: 2rem; }
+  .post-header h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.2; margin: .5rem 0; }
+  .category { font-size: .8rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: .05em; }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .hero { width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0; }
+  .tags { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
+  .tags li { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: .2rem .75rem; font-size: .85rem; color: var(--muted); }
+</style>

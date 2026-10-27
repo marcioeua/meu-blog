@@ -1,0 +1,31 @@
+---
+// Aviso simples de cookies (LGPD). Para tráfego da Europa/UK o Google exige uma CMP certificada —
+// ative a mensagem de consentimento em AdSense > Privacidade e mensagens.
+---
+<div id="cookie-banner" class="cookie-banner" hidden>
+  <p>
+    Usamos cookies para melhorar sua experiência e exibir anúncios personalizados.
+    Saiba mais na nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.
+  </p>
+  <button type="button" id="cookie-accept">Entendi</button>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const KEY = 'cookie-consent';
+  let accepted = false;
+  try { accepted = localStorage.getItem(KEY) === '1'; } catch {}
+  if (banner && !accepted) banner.hidden = false;
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    try { localStorage.setItem(KEY, '1'); } catch {}
+    if (banner) banner.hidden = true;
+  });
+</script>
+
+<style>
+  .cookie-banner { position: fixed; bottom: 1rem; left: 1rem; right: 1rem; max-width: 640px; margin: 0 auto; background: var(--text); color: var(--bg); padding: 1rem 1.25rem; border-radius: 12px; display: flex; gap: 1rem; align-items: center; z-index: 50; box-shadow: 0 8px 24px rgb(0 0 0 / .2); }
+  .cookie-banner[hidden] { display: none; }
+  .cookie-banner p { margin: 0; font-size: .9rem; }
+  .cookie-banner a { color: inherit; text-decoration: underline; }
+  .cookie-banner button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: .5rem 1rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+</style>

@@ -1,0 +1,20 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../config';
+---
+<PageLayout title="Termos de Uso" description={`Termos de uso do ${SITE.title}.`}>
+  <p><em>Última atualização: [data]</em></p>
+  <h2>1. Aceitação</h2>
+  <p>Ao acessar o {SITE.title}, você concorda com estes termos. Se não concordar, não utilize o site.</p>
+  <h2>2. Conteúdo</h2>
+  <p>
+    O conteúdo publicado tem caráter informativo e não substitui orientação profissional. Nos esforçamos
+    para manter as informações corretas, mas não garantimos que estejam sempre completas ou atualizadas.
+  </p>
+  <h2>3. Propriedade intelectual</h2>
+  <p>Textos, imagens e marcas deste site são protegidos. A reprodução sem autorização prévia é proibida.</p>
+  <h2>4. Links externos</h2>
+  <p>Não nos responsabilizamos pelo conteúdo de sites de terceiros, inclusive anunciantes.</p>
+  <h2>5. Contato</h2>
+  <p>Dúvidas sobre estes termos: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+</PageLayout>
