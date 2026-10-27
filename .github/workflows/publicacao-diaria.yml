@@ -1,0 +1,23 @@
+# Atualiza o site todo dia para liberar os posts agendados (pubDate futura).
+# Requer o secret VERCEL_DEPLOY_HOOK com a URL do Deploy Hook criado na Vercel
+# (Project → Settings → Git → Deploy Hooks).
+name: Publicação diária
+
+on:
+  schedule:
+    - cron: '7 9 * * *' # 09:07 UTC = 06:07 em Brasília
+  workflow_dispatch: # permite rodar manualmente pela aba Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar novo deploy na Vercel
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Secret VERCEL_DEPLOY_HOOK não configurado."
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK"

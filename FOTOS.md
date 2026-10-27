@@ -70,6 +70,27 @@ nome do post). Eu otimizo, renomeio e encaixo nos lugares marcados em cada artig
 
 ---
 
+## Posts agendados (28/10 a 03/11) — 1 foto de capa cada
+
+| Data | Post | Arquivo | O que fotografar |
+| --- | --- | --- | --- |
+| 28/10 | Guarda-roupa inteligente | `guarda-roupa-capa.jpg` | Guarda-roupa aberto e organizado, de preferência com luz interna acesa |
+| 28/10 | Tomada inteligente | `tomada-inteligente-capa.jpg` | Tomada inteligente ligada na parede com um abajur ou LED aceso |
+| 29/10 | Espelho inteligente | `espelho-inteligente-capa.jpg` | Espelho com LED aceso no banheiro (sem pessoas refletidas) |
+| 29/10 | Móveis para idosos | `idosos-capa.jpg` | Poltrona firme com braços ao lado de uma luminária, ambiente aconchegante |
+| 30/10 | Estante modular | `estante-modular-capa.jpg` | Estante com nichos, livros, plantas e caixas |
+| 30/10 | Planejar a elétrica | `eletrica-capa.jpg` | Tomadas com USB ou régua de tomadas organizada atrás de um móvel |
+| 31/10 | Poltrona de massagem | `poltrona-massagem-capa.jpg` | Poltrona de massagem na sala (pode ser em loja, com permissão) |
+| 31/10 | Setup gamer | `setup-gamer-capa.jpg` | Mesa com monitor, teclado e LED atrás da tela |
+| 01/11 | Móveis para banheiro | `banheiro-capa.jpg` | Gabinete suspenso com gavetas e bancada arrumada |
+| 01/11 | Cama box baú | `cama-bau-capa.jpg` | Cama baú aberta mostrando o compartimento organizado |
+| 02/11 | Varanda gourmet | `varanda-capa.jpg` | Varanda com banco, mesa e plantas, luz do dia |
+| 02/11 | Planejados ou prontos | `planejados-capa.jpg` | Cozinha ou armário planejado com portas abertas |
+| 03/11 | 10 erros ao comprar | `erros-capa.jpg` | Fita métrica sobre um móvel ou medindo um espaço |
+| 03/11 | Hall de entrada | `hall-entrada-capa.jpg` | Entrada com sapateira, ganchos e espelho |
+
+---
+
 ## Posts anteriores (opcional)
 
 Também posso colocar capa nos 9 primeiros artigos. Uma foto por post já é suficiente:
