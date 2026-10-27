@@ -57,3 +57,20 @@ O projeto já vem com `vercel.json` (URLs com barra final e cache longo para `/_
 2. Em [vercel.com/new](https://vercel.com/new), importe o repositório. O framework Astro é detectado automaticamente; não precisa mudar nada.
 3. Depois do primeiro deploy, adicione seu domínio em **Settings → Domains** e atualize `site` em `astro.config.mjs`.
 4. A cada `git push` na branch `main`, a Vercel publica uma nova versão; outras branches geram URLs de preview.
+
+## Fotos nos posts
+
+Coloque as fotos em `src/content/blog/imagens/` (JPG ou PNG, de preferência com 1600px de largura ou mais).
+O Astro converte para WebP e gera vários tamanhos automaticamente.
+
+- **Capa do post** (frontmatter):
+  ```yaml
+  heroImage: './imagens/criado-mudo-quarto.jpg'
+  heroAlt: 'Criado-mudo de madeira com celular carregando sem fio'
+  ```
+- **Foto no meio do texto** (Markdown/MDX):
+  ```md
+  ![Descrição da foto](./imagens/minha-foto.jpg)
+  ```
+
+Use nomes de arquivo descritivos e sempre preencha o texto alternativo (`heroAlt` / descrição) — isso ajuda no SEO e na acessibilidade.

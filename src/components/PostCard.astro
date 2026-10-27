@@ -1,12 +1,18 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
 
 interface Props { post: CollectionEntry<'blog'> }
 const { post } = Astro.props;
-const { title, description, pubDate, category } = post.data;
+const { title, description, pubDate, category, heroImage, heroAlt } = post.data;
 ---
 <article class="card">
+  {heroImage && (
+    <a href={`/blog/${post.id}/`} class="thumb" tabindex="-1" aria-hidden="true">
+      <Image src={heroImage} alt={heroAlt} widths={[400, 700]} sizes="(max-width: 640px) 100vw, 340px" />
+    </a>
+  )}
   <span class="category">{category}</span>
   <h2><a href={`/blog/${post.id}/`}>{title}</a></h2>
   <p>{description}</p>
@@ -14,8 +20,10 @@ const { title, description, pubDate, category } = post.data;
 </article>
 
 <style>
-  .card { border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; background: var(--surface); transition: border-color .15s, transform .15s; }
+  .card { border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; overflow: hidden; background: var(--surface); transition: border-color .15s, transform .15s; }
   .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .thumb { display: block; margin: -1.5rem -1.5rem 1.25rem; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 14px 14px 0 0; }
+  .thumb :global(img) { width: 100%; height: 100%; object-fit: cover; }
   .card h2 { font-size: 1.25rem; margin: .5rem 0; }
   .card h2 a { color: var(--text); text-decoration: none; }
   .card h2 a:hover { color: var(--accent); }

@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import AdUnit from '../components/AdUnit.astro';
@@ -7,7 +8,12 @@ import { SITE } from '../config';
 
 interface Props { post: CollectionEntry<'blog'> }
 const { post } = Astro.props;
-const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt, category, tags } = post.data;
+
+// Versão 1200x630 da capa para compartilhamento em redes sociais
+const ogImage = heroImage
+  ? (await getImage({ src: heroImage, width: 1200, height: 630, fit: 'cover', format: 'jpg' })).src
+  : undefined;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -18,10 +24,10 @@ const jsonLd = {
   dateModified: (updatedDate ?? pubDate).toISOString(),
   author: { '@type': 'Person', name: SITE.author },
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
-  ...(heroImage && { image: new URL(heroImage, Astro.site).href }),
+  ...(ogImage && { image: new URL(ogImage, Astro.site).href }),
 };
 ---
-<BaseLayout title={title} description={description} image={heroImage} type="article">
+<BaseLayout title={title} description={description} image={ogImage} type="article">
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
   <article class="post">
     <header class="post-header">
@@ -33,7 +39,17 @@ const jsonLd = {
       </p>
     </header>
 
-    {heroImage && <img class="hero" src={heroImage} alt="" width="1200" height="630" />}
+    {heroImage && (
+      <Image
+        class="hero"
+        src={heroImage}
+        alt={heroAlt}
+        widths={[480, 800, 1200]}
+        sizes="(max-width: 760px) 100vw, 720px"
+        loading="eager"
+        fetchpriority="high"
+      />
+    )}
 
     <AdUnit position="header" />
 
@@ -54,7 +70,7 @@ const jsonLd = {
   .post-header h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.2; margin: .5rem 0; }
   .category { font-size: .8rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: .05em; }
   .meta { color: var(--muted); font-size: .9rem; }
-  .hero { width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0; }
+  .post :global(.hero) { width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0; }
   .tags { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
   .tags li { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: .2rem .75rem; font-size: .85rem; color: var(--muted); }
 </style>
