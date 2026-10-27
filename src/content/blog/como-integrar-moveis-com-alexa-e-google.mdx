@@ -1,0 +1,88 @@
+---
+title: 'Como integrar móveis inteligentes com Alexa e Google Assistente'
+description: 'Passo a passo para controlar móveis por voz, criar rotinas e entender o que são Wi-Fi, Bluetooth, Zigbee e Matter na automação da casa.'
+pubDate: 2026-10-27
+category: 'Automação'
+tags: ['alexa', 'google assistente', 'automação residencial', 'matter']
+---
+import AdUnit from '../../components/AdUnit.astro';
+
+Controlar a iluminação da estante, a cabeceira da cama ou a mesa do escritório com a voz é uma das
+partes mais divertidas de ter **móveis inteligentes**. Neste guia, explicamos como funciona a
+integração com **Alexa** e **Google Assistente** e como montar rotinas úteis no dia a dia.
+
+## Primeiro: o móvel é compatível?
+
+Nem todo móvel com motor ou LED pode ser controlado por voz. Procure na embalagem ou na descrição
+do produto termos como:
+
+- **"Funciona com Alexa"** ou **"Works with Alexa"**;
+- **"Funciona com Google Home"**;
+- **Matter** (padrão que funciona com várias plataformas ao mesmo tempo).
+
+Se o móvel só tem controle remoto ou app próprio via Bluetooth, normalmente ele **não** conversa
+diretamente com os assistentes de voz.
+
+## Entenda as tecnologias de conexão
+
+| Tecnologia | Como funciona | Observação |
+| --- | --- | --- |
+| **Wi-Fi** | Conecta direto ao roteador | Não precisa de hub; depende de bom sinal |
+| **Bluetooth** | Conexão de curta distância com o celular | Geralmente sem integração por voz |
+| **Zigbee** | Rede própria de baixo consumo | Precisa de um hub compatível |
+| **Matter** | Padrão comum entre fabricantes | Um mesmo produto funciona em várias plataformas |
+
+Para quem está começando, produtos **Wi-Fi** ou **Matter** costumam ser os mais simples.
+
+<AdUnit position="inArticle" format="fluid" layout="in-article" />
+
+## Passo a passo: conectando à Alexa
+
+1. Instale e configure o móvel no **aplicativo do fabricante**, conectando-o ao Wi-Fi.
+2. Abra o app **Amazon Alexa** e toque em **Dispositivos**.
+3. Toque em **+** e escolha **Adicionar dispositivo** (para Matter) ou procure a **Skill** do
+   fabricante e vincule sua conta.
+4. Dê um nome fácil ao dispositivo, como "luz da estante" ou "mesa do escritório".
+5. Teste: *"Alexa, ligar luz da estante."*
+
+## Passo a passo: conectando ao Google Assistente
+
+1. Configure o móvel no **app do fabricante**.
+2. Abra o app **Google Home** e toque em **Adicionar** → **Dispositivo**.
+3. Escolha **Matter** ou **Funciona com o Google Home** e selecione o fabricante, entrando com sua
+   conta.
+4. Coloque o dispositivo no **cômodo** correto — isso permite comandos como "apagar as luzes do
+   quarto".
+5. Teste: *"Ok Google, ligar luz da estante."*
+
+> Os nomes dos menus podem mudar com as atualizações dos aplicativos, mas a lógica é sempre a mesma:
+> configurar no app do fabricante e depois vincular ao assistente.
+
+## E se o móvel não for compatível?
+
+Para móveis com iluminação ou acessórios ligados na tomada, uma **tomada inteligente** resolve boa
+parte dos casos: o assistente liga e desliga a energia, e o LED acende ou apaga junto. Isso **não**
+funciona bem para móveis com motor que exigem um comando de subir ou descer — nesse caso, a
+integração precisa vir do próprio fabricante.
+
+## Rotinas que valem a pena
+
+As rotinas executam várias ações com um único comando ou em um horário definido:
+
+- **"Bom dia":** acende a luz do criado-mudo, abre a cortina e lê a previsão do tempo.
+- **"Hora de trabalhar":** liga a luz da escrivaninha e a tomada do monitor.
+- **"Boa noite":** apaga a iluminação da estante e da sala e ativa a luz noturna.
+- **Por horário:** desliga automaticamente o LED da TV à meia-noite.
+
+## Dicas de segurança e privacidade
+
+- Use **senhas fortes** e autenticação em dois fatores nas contas.
+- Mantenha os apps e o **firmware** dos dispositivos atualizados.
+- Se possível, crie uma **rede Wi-Fi de convidados** só para os dispositivos inteligentes.
+- Revise as permissões de microfone e histórico de voz nos apps dos assistentes.
+
+## Conclusão
+
+Integrar móveis inteligentes com Alexa ou Google Assistente é mais simples do que parece: verifique a
+compatibilidade, configure no app do fabricante e depois vincule ao assistente. Comece com uma ou duas
+rotinas e vá ampliando conforme sentir que elas realmente facilitam o seu dia.
