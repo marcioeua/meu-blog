@@ -1,0 +1,16 @@
+---
+import { SITE } from '../config';
+---
+<span class="logo">
+  <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+    <rect width="32" height="32" rx="8" fill="var(--accent)" />
+    <path d="M8 16.5 16 9.5l8 7V24a1 1 0 0 1-1 1h-4.5v-5h-5v5H9a1 1 0 0 1-1-1z" fill="var(--on-accent)" />
+    <circle cx="16" cy="17" r="1.4" fill="var(--accent)" />
+  </svg>
+  <span>{SITE.title}</span>
+</span>
+
+<style>
+  .logo { display: inline-flex; align-items: center; gap: .55rem; font-weight: 800; font-size: 1.25rem; letter-spacing: -.01em; }
+  .mark { width: 32px; height: 32px; flex: none; }
+</style>

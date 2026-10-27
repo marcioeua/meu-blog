@@ -2,13 +2,30 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE } from '../config';
 ---
-<PageLayout title="Sobre" description={`Conheça o ${SITE.title}.`}>
+<PageLayout title="Sobre" description={`Conheça o ${SITE.title}, blog sobre móveis inteligentes e soluções para casas mais práticas.`}>
   <p>
-    O <strong>{SITE.title}</strong> nasceu com o objetivo de [descreva a missão do blog].
-    Aqui você encontra conteúdos sobre [seu nicho], escritos de forma clara e prática.
+    O <strong>{SITE.title}</strong> é um blog dedicado aos <strong>móveis inteligentes</strong>: peças que
+    combinam design, tecnologia e funcionalidade para deixar a casa mais prática, confortável e bem aproveitada.
   </p>
+  <p>
+    Aqui você encontra guias de compra, ideias para ambientes pequenos, explicações sobre tecnologias como
+    motores elétricos, carregamento por indução e automação residencial, além de dicas para escolher o
+    móvel certo para a sua rotina e o seu orçamento.
+  </p>
+
   <h2>Quem escreve</h2>
-  <p>Meu nome é {SITE.author}. [Conte um pouco da sua experiência e por que você é uma boa fonte sobre o assunto.]</p>
+  <p>
+    Meu nome é <strong>{SITE.author}</strong>. Sou apaixonado por tecnologia e por soluções que facilitam o
+    dia a dia dentro de casa. Criei o {SITE.title} para reunir, em um só lugar, informações claras e
+    honestas sobre móveis inteligentes — sem exageros e sem complicação.
+  </p>
+
   <h2>Nosso compromisso</h2>
-  <p>Todo conteúdo é revisado e atualizado periodicamente para garantir informações corretas e úteis.</p>
+  <ul>
+    <li>Conteúdo original, escrito para ajudar você a tomar boas decisões.</li>
+    <li>Informações revisadas e atualizadas periodicamente.</li>
+    <li>Transparência: quando um conteúdo tiver patrocínio ou links de afiliados, isso será informado.</li>
+  </ul>
+
+  <p>Tem uma sugestão de tema? <a href="/contato/">Fale com a gente</a>.</p>
 </PageLayout>

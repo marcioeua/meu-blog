@@ -2,8 +2,16 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE } from '../config';
 ---
-<PageLayout title="Contato" description="Entre em contato conosco.">
-  <p>Tem alguma dúvida, sugestão ou proposta de parceria? Fale com a gente:</p>
+<PageLayout title="Contato" description={`Entre em contato com o ${SITE.title}.`}>
+  <p>
+    Tem alguma dúvida sobre móveis inteligentes, quer sugerir um tema ou propor uma parceria?
+    Será um prazer conversar com você.
+  </p>
   <p><strong>E-mail:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
   <p>Respondemos normalmente em até 2 dias úteis.</p>
+  <h2>Parcerias e publicidade</h2>
+  <p>
+    Fabricantes e lojas que desejam ter seus produtos analisados podem entrar em contato pelo mesmo e-mail.
+    Todo conteúdo patrocinado é identificado como tal.
+  </p>
 </PageLayout>

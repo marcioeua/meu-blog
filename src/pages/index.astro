@@ -11,8 +11,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 ---
 <BaseLayout>
   <section class="hero">
-    <h1>{SITE.title}</h1>
-    <p>{SITE.description}</p>
+    <p class="eyebrow">Móveis inteligentes</p>
+    <h1>Sua casa mais <span>prática</span>, confortável e conectada</h1>
+    <p class="lead">{SITE.description}</p>
+    <a class="cta" href="/blog/">Ler os artigos</a>
   </section>
 
   <AdUnit position="header" />
@@ -27,9 +29,14 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 </BaseLayout>
 
 <style>
-  .hero { padding: 3rem 0 1rem; text-align: center; }
-  .hero h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0; }
-  .hero p { color: var(--muted); font-size: 1.15rem; }
+  .hero { margin-top: 2rem; padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1.25rem, 5vw, 3.5rem); background: var(--accent-soft); border-radius: 20px; text-align: center; }
+  .eyebrow { margin: 0; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+  .hero h1 { font-size: clamp(1.9rem, 5.5vw, 3rem); line-height: 1.15; margin: .5rem auto 1rem; max-width: 18ch; letter-spacing: -.02em; }
+  .hero h1 span { color: var(--accent); }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 52ch; margin: 0 auto 1.75rem; }
+  .cta { display: inline-block; background: var(--accent); color: var(--on-accent); padding: .75rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; }
+  .cta:hover { background: var(--accent-strong); color: var(--on-accent); }
+  h2 { margin-top: 3rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
   .more { text-align: center; margin-top: 2rem; }
 </style>

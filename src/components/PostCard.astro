@@ -14,7 +14,8 @@ const { title, description, pubDate, category } = post.data;
 </article>
 
 <style>
-  .card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; background: var(--surface); }
+  .card { border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; background: var(--surface); transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .card h2 { font-size: 1.25rem; margin: .5rem 0; }
   .card h2 a { color: var(--text); text-decoration: none; }
   .card h2 a:hover { color: var(--accent); }

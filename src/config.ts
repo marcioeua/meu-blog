@@ -1,8 +1,9 @@
 // Configurações globais do site — edite aqui primeiro.
 export const SITE = {
-  title: 'Meu Blog',
-  description: 'Dicas, guias e novidades sobre [seu nicho].',
-  author: 'Seu Nome',
+  title: 'Casa Smart',
+  description: 'Guias, dicas e análises sobre móveis inteligentes para deixar sua casa mais prática, confortável e conectada.',
+  author: 'Marcio Andrade',
+  // TODO: troque pelo e-mail de contato real do blog
   email: 'contato@seudominio.com.br',
   lang: 'pt-BR',
   locale: 'pt_BR',
