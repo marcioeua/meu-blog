@@ -3,8 +3,7 @@ export const SITE = {
   title: 'Casa Smart',
   description: 'Guias, dicas e análises sobre móveis inteligentes para deixar sua casa mais prática, confortável e conectada.',
   author: 'Marcio Andrade',
-  // TODO: troque pelo e-mail de contato real do blog
-  email: 'contato@seudominio.com.br',
+  email: 'cimargv@gmail.com',
   lang: 'pt-BR',
   locale: 'pt_BR',
 };
