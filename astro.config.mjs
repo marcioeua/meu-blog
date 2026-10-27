@@ -3,9 +3,9 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-// TODO: troque pela URL final do seu domínio (necessário para sitemap, canonical e RSS)
+// URL final do site (usada no sitemap, canonical e RSS). Troque ao configurar um domínio próprio.
 export default defineConfig({
-  site: 'https://www.seudominio.com.br',
+  site: 'https://meu-blog.vercel.app',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
 });
